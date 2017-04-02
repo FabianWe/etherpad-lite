@@ -1,0 +1,22 @@
+version: '2'
+
+services:
+  mariadb:
+      image: mariadb
+      volumes:
+        - ./mariadb:/var/lib/mysql
+      environment:
+        - MYSQL_ROOT_PASSWORD=rlIK9Qp5dEcZKineLffQiUsfYB01b233
+
+  etherpad:
+    image: fabianwe/etherpad-lite
+    links:
+      - "mariadb:mysql"
+    expose:
+      - "9001"
+    environment:
+      - ETHERPAD_DB_PASSWORD=rlIK9Qp5dEcZKineLffQiUsfYB01b233
+    volumes:
+      - ./etherpad:/opt/etherpad-lite/var
+    ports:
+      - "9001:9001"
