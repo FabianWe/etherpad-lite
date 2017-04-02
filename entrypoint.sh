@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # MIT License
 # Copyright (c) 2017 Fabian Wenzelmann
@@ -87,18 +87,6 @@ if [ ! -f settings.json ]; then
 	cat <<- EOF >> settings.json
 	}
 	EOF
-fi
-
-if [ ! -f APIKEY.txt ]; then
-	API_KEY=$(node -p "require('crypto').randomBytes(32).toString('hex')")
-	echo "${API_KEY}" > APIKEY.txt
-	printf "%s\n" "${API_KEY}"
-fi
-
-if [ ! -f SESSIONKEY.txt ]; then
-	SESSION_KEY=$(node -p "require('crypto').randomBytes(32).toString('hex')")
-	echo "${SESSION_KEY}" > SESSIONKEY.txt
-	printf "%s\n" "${SESSION_KEY}"
 fi
 
 exec "$@"
