@@ -41,18 +41,6 @@ fi
 : ${ETHERPAD_TITLE:=Etherpad}
 : ${ETHERPAD_PORT:=9001}
 
-# Check if database already exists
-RESULT=`mysql -u${ETHERPAD_DB_USER} -p${ETHERPAD_DB_PASSWORD} \
-	-h${ETHERPAD_DB_HOST} --skip-column-names \
-	-e "SHOW DATABASES LIKE '${ETHERPAD_DB_NAME}'"`
-
-if [ "$RESULT" != $ETHERPAD_DB_NAME ]; then
-	# mysql database does not exist, create it
-	echo "Creating database ${ETHERPAD_DB_NAME}"
-
-	mysql -u${ETHERPAD_DB_USER} -p${ETHERPAD_DB_PASSWORD} -h${ETHERPAD_DB_HOST} \
-	      -e "create database ${ETHERPAD_DB_NAME}"
-fi
 
 if [ ! -f settings.json ]; then
 

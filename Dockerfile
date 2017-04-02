@@ -28,7 +28,7 @@ ENV ETHERPAD_VERSION 1.6.1
 
 WORKDIR /opt/
 
-RUN apk add --no-cache mysql-client curl \
+RUN apk add --no-cache curl \
   && apk add --no-cache --virtual .build-deps \
     gzip \
   && curl -SL \
