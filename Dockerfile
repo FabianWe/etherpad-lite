@@ -51,3 +51,4 @@ EXPOSE 9001
 
 ENTRYPOINT ["/entrypoint.sh"]
 CMD ["bin/run.sh", "--root"]
+
