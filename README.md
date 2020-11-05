@@ -1,5 +1,6 @@
 # etherpad-lite
 A docker image for etherpad-lite using an alpine base image.
+Current ethperad-lite version: 1.8.6
 
 This image was largely inspired by [tvelocity/etherpad-lite](https://hub.docker.com/r/tvelocity/etherpad-lite/) but has some differences:
 
