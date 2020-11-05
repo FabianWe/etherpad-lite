@@ -11,7 +11,7 @@ This image was largely inspired by [tvelocity/etherpad-lite](https://hub.docker.
 Here is a usage example in docker-compose, if you don't use compose I'm confident you can figure it out:
 
 ```yml
-version: '2'
+version: '3'
 
 services:
   mariadb:

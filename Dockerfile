@@ -1,5 +1,5 @@
 # MIT License
-# Copyright (c) 2017 Fabian Wenzelmann
+# Copyright (c) 2017 - 2020 Fabian Wenzelmann
 #
 # Permission is hereby granted, free of charge, to any person obtaining a copy of
 # this software and associated documentation files (the "Software"), to deal in
@@ -21,10 +21,11 @@
 # NOTE: This file was largely inspired by tvelocity/etherpad-lite:
 # https://github.com/tvelocity/dockerfiles/blob/master/etherpad-lite/entrypoint.sh
 
-FROM node:6.10-alpine
+FROM node:15.1.0-alpine3.12
 MAINTAINER Fabian Wenzelmann <fabianwen@posteo.eu>
 
-ENV ETHERPAD_VERSION 1.6.1
+ENV ETHERPAD_VERSION=1.8.6
+ENV NODE_ENV=production
 
 WORKDIR /opt/
 
